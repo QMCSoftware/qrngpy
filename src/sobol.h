@@ -7,6 +7,6 @@
 #define sobolMaxDegree 17
 #define sobolMaxCol 32
 
-double sobol(int n, int d, int randomize, double *res, int skip, long seed);
+void sobol(int n, int d, int randomize, double *res, int skip, long seed);
 
 #endif

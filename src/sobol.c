@@ -18410,7 +18410,7 @@ void bintogray(int n1, int size, int *b)
  * @return void
  * @author Marius Hofert based on Christiane's Lemieux's RandQMC
  */
-double sobol(int n, int d, int randomize, double *res, int skip, long seed)
+void sobol(int n, int d, int randomize, double *res, int skip, long seed)
 {
     int i, count, numcols, j, k, initcount;
     int newv, temp, degree, sizeskip;
