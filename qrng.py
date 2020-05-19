@@ -4,7 +4,7 @@ import ctypes
 import numpy
 import os
 
-path = os.path.dirname(os.path.abspath(__file__))+'/src/so/'
+path = os.path.dirname(os.path.abspath(__file__))+'/src/'
 # MRG63k3a
 lib_mrg63ka = ctypes.CDLL(path+'MRG63k3a.so',mode=ctypes.RTLD_GLOBAL)
 mrg63ka_f = lib_mrg63ka.MRG63k3a
