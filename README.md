@@ -14,9 +14,7 @@ The directional numbers are found using methods described in **[3]**.
 2. Ensure */qrngpy/* is on your python path
    - Easiest with virtual environment
 3. Install requirements: `pip install -r requirements.txt` 
-4. Compile C files into shared libraries
-   - Give permission to compile script : `chmod +x compile.sh`
-   - Compile C files: `./compile.sh`
+4. Compile C files into shared libraries: `make all`
 5. Test for successful setup: `python qrng.py`
 
 ---
