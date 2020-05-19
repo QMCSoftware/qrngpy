@@ -5,14 +5,13 @@ import numpy
 import os
 
 path = os.path.dirname(os.path.abspath(__file__))+'/src/'
+lib = ctypes.CDLL(path+'library.so',mode=ctypes.RTLD_GLOBAL)
 # MRG63k3a
-lib_mrg63ka = ctypes.CDLL(path+'MRG63k3a.so',mode=ctypes.RTLD_GLOBAL)
-mrg63ka_f = lib_mrg63ka.MRG63k3a
+mrg63ka_f = lib.MRG63k3a
 mrg63ka_f.argtypes = None
 mrg63ka_f.restype = ctypes.c_double
 # korobov
-lib_korobov = ctypes.CDLL(path+'korobov.so',mode=ctypes.RTLD_GLOBAL)
-korobov_f = lib_korobov.korobov
+korobov_f = lib.korobov
 korobov_f.argtypes = [
     ctypes.c_int, # n
     ctypes.c_int, # d
@@ -22,8 +21,7 @@ korobov_f.argtypes = [
     ctypes.c_long] # seed
 korobov_f.restype = None
 # ghalton
-lib_ghalton = ctypes.CDLL(path+'ghalton.so',mode=ctypes.RTLD_GLOBAL)
-ghalton_f = lib_ghalton.ghalton
+ghalton_f = lib.ghalton
 ghalton_f.argtypes = [
     ctypes.c_int, # n
     ctypes.c_int, # d
@@ -32,8 +30,7 @@ ghalton_f.argtypes = [
     ctypes.c_long] # seed
 ghalton_f.restype = None
 # sobol
-lib_sobol = ctypes.CDLL(path+'sobol.so',mode=ctypes.RTLD_GLOBAL)
-sobol_f = lib_sobol.sobol
+sobol_f = lib.sobol
 sobol_f.argtypes = [
     ctypes.c_int, # n
     ctypes.c_int, # d
